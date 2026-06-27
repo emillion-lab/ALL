@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d1117">
+<title>emillion-lab · All Projects</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#e6edf3;font-family:'Segoe UI',system-ui,sans-serif;padding:0 0 60px}
+header{background:#161b22;border-bottom:1px solid #30363d;padding:16px 16px 12px;position:sticky;top:0;z-index:10}
+.logo{font-size:20px;font-weight:900;color:#58a6ff;letter-spacing:-.5px}
+.logo span{color:#f5c518}
+.search-wrap{margin-top:10px;position:relative}
+#search{width:100%;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:10px 14px;font-size:15px;color:#e6edf3;outline:none}
+#search:focus{border-color:#58a6ff}
+#search::placeholder{color:#6e7681}
+#count{font-size:12px;color:#6e7681;margin-top:6px}
+.content{padding:10px 12px}
+.cat{font-size:11px;font-weight:800;color:#6e7681;text-transform:uppercase;letter-spacing:.6px;margin:18px 0 8px;padding-left:2px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 14px;margin-bottom:8px;transition:border-color .15s}
+.card:hover{border-color:#58a6ff}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.card-name{font-size:15px;font-weight:700;color:#e6edf3;margin-bottom:4px}
+.card-desc{font-size:13px;color:#8b949e;line-height:1.5}
+.card-btns{display:flex;gap:6px;flex-shrink:0;margin-top:2px}
+.btn-live{background:#1f6feb;color:#fff;border:none;border-radius:7px;padding:7px 11px;font-size:15px;text-decoration:none;cursor:pointer}
+.btn-gh{background:#21262d;color:#e6edf3;border:1px solid #30363d;border-radius:7px;padding:7px 11px;font-size:15px;text-decoration:none;cursor:pointer}
+.btn-live:hover{background:#388bfd}
+.btn-gh:hover{border-color:#8b949e}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">emillion<span>-lab</span> · All Projects</div>
+  <div class="search-wrap">
+    <input id="search" type="text" placeholder="🔍 Търси проект…" oninput="filterCards()">
+  </div>
+  <div id="count"></div>
+</header>
+<div class="content" id="content">
+<div class="cat">🚕 Такси проекти</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🐟 FishBakshish</div>
+      <div class="card-desc">Клиентско такси приложение за София — търси шофьор по марка, цена, характер, езици. Реален ИААА регистър.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/FishBakshish/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/FishBakshish" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🐟 Bakshish</div>
+      <div class="card-desc">Шофьорско приложение — верификация, тарифа, heatmap на търсенето, симулация на поръчки.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/Bakshish/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/Bakshish" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🔥 BakshishApp</div>
+      <div class="card-desc">Sofia Taxi Demand heatmap — реален трафик, летищни полети, зони по приоритет, Karyk mode.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/BAK/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/BAK" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">📡 SOF</div>
+      <div class="card-desc">Sofia Taxi Demand — реална карта, GPS навигация, полети, времето. За таксиметрови шофьори.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/SOF/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/SOF" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">📊 TaxiDB Pro</div>
+      <div class="card-desc">Анализ на Sofia таксиметровия регистър — 6000+ превозни средства, изтичащи лицензи, проследяване на промени.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/TAXI/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/TAXI" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🤝 TaxiWE</div>
+      <div class="card-desc">Такси matching app — свързва шофьори и пътници в София.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/TAXIWE/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/TAXIWE" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="cat">🛠️ Инструменти</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">💻 DevCheck 2.0</div>
+      <div class="card-desc">Тестер за лаптопи и телефони втора употреба — проверява камера, микрофон, батерия, CPU, RAM.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/DevCheck/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/DevCheck" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">💶 Root Planner</div>
+      <div class="card-desc">Финансов калкулатор за шофьори в 40+ европейски града — Uber, данъци, семеен бюджет.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/ABRP/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/ABRP" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">☀️ PV Calculator</div>
+      <div class="card-desc">Калкулатор за слънчеви панели — мощност, цена, ROI, за дома и бизнеса.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/PVC/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/PVC" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🚨 KAT Monitor</div>
+      <div class="card-desc">Пътен монитор — Психо-среда, МВР данни, прогноза за пътни инциденти в България.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/KAT/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/KAT" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">📰 NCI</div>
+      <div class="card-desc">Narrative Credibility Index — проверка на достоверността на новини на 10 европейски езика.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/NCI/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/NCI" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🥇 Gold 2036</div>
+      <div class="card-desc">Калкулатор за златния стандарт — исторически анализ и сценарии до 2036 г.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/2036/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/2036" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="cat">📚 Образование</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🌍 Bulgaria Guide</div>
+      <div class="card-desc">Туристически пътеводител на България — 30 града, 591+ места, 14 езика. Работи офлайн.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/BGR/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/BGR" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🧠 AIT</div>
+      <div class="card-desc">Advanced Intuition Training — CIA Stargate Remote Viewing протоколи. 5 профила, 10 нива.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/AIT/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/AIT" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🔮 AIRV</div>
+      <div class="card-desc">Advanced Intelligence Remote Viewing — разширено обучение по интуиция.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/AIRV/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/AIRV" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🇨🇭 Schwyzerdütsch</div>
+      <div class="card-desc">Интерактивен инструмент за учене на швейцарски немски — аудио, произношение, упражнения.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/SWSS/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/SWSS" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🐴 FEI Rules EN</div>
+      <div class="card-desc">Интерактивно обучение по правилата на FEI за конен спорт — 2026 Jumping rules (EN).</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/FEI/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/FEI" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🐴 FEI Rules BG</div>
+      <div class="card-desc">Интерактивно обучение по правилата на FEI за конен спорт — 2026 Jumping rules (BG).</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/FEIBG/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/FEIBG" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🚛 Cat C Study</div>
+      <div class="card-desc">Помагало за изпит за C категория — теория за камиони с визуални мнемоники и аудио.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/CCAT/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/CCAT" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🎙️ Why Files</div>
+      <div class="card-desc">Каталог на The Why Files — 251 епизода, 6 езика, търсене по заглавие.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/TWF/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/TWF" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="cat">👤 Лични</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">📋 CV / Portfolio</div>
+      <div class="card-desc">Интерактивно CV — анимирани skill bars, timeline, проекти, фокус върху IT Operations.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/CV/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/CV" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🤖 Claude's Confessions</div>
+      <div class="card-desc">Специален проект с Claude — изповеди и размисли на AI.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/CLAUDE/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/CLAUDE" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div><div class="card">
+  <div class="card-top">
+    <div>
+      <div class="card-name">🌱 Root Planter 2026</div>
+      <div class="card-desc">Планиране на преместване в Европа — градове, данъци, живот.</div>
+    </div>
+    <div class="card-btns">
+      <a href="https://emillion-lab.github.io/Root-Planter-2026/" target="_blank" class="btn-live">🌐</a>
+      <a href="https://github.com/emillion-lab/Root-Planter-2026" target="_blank" class="btn-gh">⌨️</a>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+function filterCards(){
+  const q=document.getElementById('search').value.toLowerCase().trim();
+  const cards=document.querySelectorAll('.card');
+  let vis=0;
+  cards.forEach(c=>{
+    const txt=c.textContent.toLowerCase();
+    const show=!q||txt.includes(q);
+    c.classList.toggle('hidden',!show);
+    if(show)vis++;
+  });
+  // Show/hide category labels
+  document.querySelectorAll('.cat').forEach(cat=>{
+    let next=cat.nextElementSibling;
+    let anyVis=false;
+    while(next&&!next.classList.contains('cat')){
+      if(!next.classList.contains('hidden'))anyVis=true;
+      next=next.nextElementSibling;
+    }
+    cat.classList.toggle('hidden',!anyVis);
+  });
+  document.getElementById('count').textContent=q?vis+' резултата':'';
+}
+</script>
+</body>
+</html>
